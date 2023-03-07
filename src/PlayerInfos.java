@@ -40,12 +40,15 @@ public class PlayerInfos {
             if (countRound%5==0){
                 int challenge = rand.nextInt(5);
                 System.out.printf("Challenge for %s: ", Player);
-                if (challenge==sc.nextInt()) {
+                int guess = sc.nextInt();
+                sc.nextLine();
+
+                if (challenge==guess) {
                     currentSpaces -= 5;
                     PlayerNameScore.replace(Player, currentSpaces);
                     System.out.println("success");
                 } else {
-                    System.out.println("fail");
+                    System.out.printf("fail (%d) \n", challenge);
                 }
                 System.out.println(PlayerNameScore);
             }
